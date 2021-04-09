@@ -8,7 +8,7 @@ export default class IndexRoute extends Route {
     //   poster_path: '/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg',
     //   release_date: '2015-05-13',
     // };
-    let response = await fetch('/movie/76341.json');
+    let response = await fetch('/popular/popular.json');
     let parsed = await response.json();
     return parsed;
   }

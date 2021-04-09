@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-
 const THEMOVIEDB_IMG = 'https://image.tmdb.org/t/p/w500';
 
 export default class MovieComponent extends Component {
