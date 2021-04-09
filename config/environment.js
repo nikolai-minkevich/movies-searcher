@@ -47,7 +47,7 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
-  ENV.THEMOVIEDB_API_KEY = '72b56103e43843412a992a8d64bf96e9';
+  ENV.TMDB_API_KEY = '72b56103e43843412a992a8d64bf96e9';
 
   return ENV;
 };
