@@ -1,4 +1,4 @@
-<a href="/movie/{{@movie.id}}">
+<LinkTo @route="movie" @model={{@movie}}>
   <div class="movie-card">
     <div
       class="movie-card__poster"
@@ -11,4 +11,4 @@
       {{this.year}}
     </h3>
   </div>
-</a>
+</LinkTo>
