@@ -1,4 +1,37 @@
 .detailed-container {
   display        : flex;
   justify-content: center;
+  flex-direction : column;
+  padding: 0.3em;;
+
+}
+
+.detailed-header,
+.detailed-content {
+  display        : flex;
+  justify-content: start;
+  flex-direction : row;
+  align-items    : flex-start;
+  padding: 0.3em;;
+
+
+}
+
+.detailed-content__poster img {
+  max-height: 300px;
+}
+
+.movie-info__content {
+  font-weight: bold;
+}
+
+.movie-info-list {
+  padding: 0.3em;;
+  ul {
+    list-style-type: none;
+  }
+}
+
+.movie-overview{
+  padding: 0.3em;;
 }
