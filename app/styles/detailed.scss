@@ -22,16 +22,17 @@
 .detailed-header {
   flex-direction: column;
 
-  .detailed-header__year,h2 {
+  .detailed-header__year,
+  h2 {
     font-style : italic;
     font-weight: lighter;
   }
 
-  
+
 }
 
 .detailed-content__poster img {
-  max-height   : 300px;
+  max-height   : 500px;
   border-radius: 5px;
 }
 
@@ -43,12 +44,32 @@
   padding: 0.3em;
   ;
 
+  // ul li {  }
+  // ul li:after { content: "  \00b7  "; }
+  // ul li:last-child:after { content: ""; }
   ul {
-    list-style-type: none;
+    li {
+      display: inline-block;
+    }
+
+    :after {
+      content: "  \00b7  ";
+    }
+
+    :last-child:after {
+      content: "";
+    }
   }
 }
 
 .movie-overview {
   padding: 0.3em;
   ;
+}
+
+.detailed-info {
+  display        : flex;
+  justify-content: center;
+  flex-direction : column;
+  padding-left   : 20px;
 }

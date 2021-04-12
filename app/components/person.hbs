@@ -1,0 +1,13 @@
+<div class="person">
+  {{#if this.photo}}
+    <img src={{this.photo}} />
+  {{/if}}
+  <h2>
+    {{@person.name}}
+  </h2>
+  {{#if this.who}}
+    <h3>
+      {{this.who}}
+    </h3>
+  {{/if}}
+</div>

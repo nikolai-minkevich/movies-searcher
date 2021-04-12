@@ -9,6 +9,10 @@ export default class MovieDetailedComponent extends Component {
     const { release_date } = this.args.movie;
     return release_date.substr(0, 4);
   }
+  get date() {
+    const release_date = new Date(this.args.movie.release_date);
+    return release_date.toLocaleDateString('en-US');
+  }
   get poster() {
     const { poster_path } = this.args.movie;
     return THEMOVIEDB_IMG + poster_path;
@@ -40,5 +44,15 @@ export default class MovieDetailedComponent extends Component {
       return original_title;
     }
     return null;
+  }
+
+  get creditsCast() {
+    const { cast } = this.args.movie;
+    return cast.slice(0, 5);
+  }
+  get creditsCrew() {
+    const { crew } = this.args.movie;
+    console.log();
+    return crew.slice(0, 5);
   }
 }
