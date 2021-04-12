@@ -1,6 +1,19 @@
-<div class="movies-list">
-  {{!-- <p>{{this.page}} of {{this.totalPages}} ({{this.data.length}})</p> --}}
-  {{#each this.data as |movieInfo|}}
-    <Movie @movie={{movieInfo}} />
-  {{/each}}
-</div>
+<InfiniteScroller
+    class="movies-list"
+    @onLoadMore={{this.handleLoadMore}}
+    @element={{this.document}} as |scroller|
+  >
+    {{#each this.things as |movieInfo|}}
+      <Movie @movie={{movieInfo}} />
+    {{/each}}
+    {{#unless scroller.isScrollable}}
+      <button type="button" {{on 'click' scroller.loadMore}}>
+        Load more
+      </button>
+    {{/unless}}
+    {{#if scroller.isLoading}}
+      <div class="status">
+        Loading...
+      </div>
+    {{/if}}
+  </InfiniteScroller>

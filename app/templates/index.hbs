@@ -1,10 +1,19 @@
-{{! <div>
-  <h2>
-    Welcome to The Movies Searcher!
-  </h2>
-  <p>
-    We hope you find exactly what you're looking for in a movie to watch.
-  </p>
-</div> }}
-<Search />
-<Movies @moviesPage={{@model}} />
+<InfiniteScroller
+  class="movies-list"
+  @onLoadMore={{this.handleLoadMore}}
+  @element={{this.document}} as |scroller|
+>
+  {{#each this.things as |movieInfo|}}
+    <Movie @movie={{movieInfo}} />
+  {{/each}}
+  {{#unless scroller.isScrollable}}
+    <button type="button" {{on 'click' scroller.loadMore}}>
+      Load more
+    </button>
+  {{/unless}}
+  {{#if scroller.isLoading}}
+    <div class="status">
+      Loading...
+    </div>
+  {{/if}}
+</InfiniteScroller>

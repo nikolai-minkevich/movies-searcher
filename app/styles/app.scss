@@ -9,3 +9,38 @@
 @import 'index.scss';
 @import 'detailed.scss';
 @import 'person.scss';
+
+
+a {
+  display: inline-block;
+}
+
+.infinite-scroller {
+ 
+  padding: 10px;
+}
+
+.internal-element,
+.external-element {
+  margin: 10px;
+  padding: 10px;
+}
+
+.thing {
+  border: 1px solid var(--blue);
+  height: 20px;
+  margin: 10px;
+}
+
+.status {
+  border: 1px solid var(--green);
+  margin: 10px;
+}
+
+.example-1,
+.example-3,
+.internal-element,
+.external-element {
+  overflow: auto;
+  max-height: 200px;
+}
