@@ -24,8 +24,9 @@
 >
   {{#each this.things as |thing|}}
     <div class="thing">
-      {{thing.name}}
+      {{thing.id}}
     </div>
+    
   {{/each}}
 
   {{#unless scroller.isScrollable}}
