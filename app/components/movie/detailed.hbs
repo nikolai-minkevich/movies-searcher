@@ -1,9 +1,11 @@
+{{this.nothing}}
 <div class="detailed-container">
   <div class="detailed-header">
     <h1>
-      {{@movie.original_title}}
-      ({{this.year}})
+      {{@movie.title}}
+      <span class="detailed-header__year">({{this.year}})</span>
     </h1>
+    <h2>«{{@movie.tagline}}»</h2>
   </div>
   <div class="detailed-content">
     <div class="detailed-content__poster">
@@ -11,16 +13,13 @@
     </div>
     <div class="movie-info-list">
       <ul>
-        <li class="movie-info">
-          Original title:
-          <span class="movie-info__content">
-            {{@movie.original_title}}
-          </span>
-        </li>
+      
+        
+
         <li class="movie-info">
           Genres:
           <span class="movie-info__content">
-            {{@movie.genre_ids}}
+           {{this.genres}}
           </span>
         </li>
         <li class="movie-info">

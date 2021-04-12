@@ -2,7 +2,8 @@
   display        : flex;
   justify-content: center;
   flex-direction : column;
-  padding: 0.3em;;
+  padding        : 0.3em;
+  ;
 
 }
 
@@ -12,13 +13,26 @@
   justify-content: start;
   flex-direction : row;
   align-items    : flex-start;
-  padding: 0.3em;;
+  padding        : 0.3em;
+  ;
 
 
 }
 
+.detailed-header {
+  flex-direction: column;
+
+  .detailed-header__year,h2 {
+    font-style : italic;
+    font-weight: lighter;
+  }
+
+  
+}
+
 .detailed-content__poster img {
-  max-height: 300px;
+  max-height   : 300px;
+  border-radius: 5px;
 }
 
 .movie-info__content {
@@ -26,12 +40,15 @@
 }
 
 .movie-info-list {
-  padding: 0.3em;;
+  padding: 0.3em;
+  ;
+
   ul {
     list-style-type: none;
   }
 }
 
-.movie-overview{
-  padding: 0.3em;;
+.movie-overview {
+  padding: 0.3em;
+  ;
 }
