@@ -17,7 +17,6 @@ export default class ThingsController extends Controller {
 
   constructor() {
     super(...arguments);
-    // this.things = this._generateThings();
     this.things = [];
     this.initThings();
   }
@@ -35,7 +34,7 @@ export default class ThingsController extends Controller {
         let res = await this.loadData();
         console.log(res.results);
         this.page++;
-        this.things = [...this.things, ...res];
+        this.things = [...this.things, ...res.results];
         resolve();
       }, this.appController.loadDelay);
     });
