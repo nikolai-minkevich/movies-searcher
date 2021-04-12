@@ -9,3 +9,46 @@
 @import 'index.scss';
 @import 'detailed.scss';
 @import 'person.scss';
+
+:root {
+  --red: red;
+  --blue: blue;
+  --green: green;
+}
+
+/* stylelint-disable-next-line */
+a {
+  display: inline-block;
+}
+
+.infinite-scroller {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid var(--red);
+}
+
+.internal-element,
+.external-element {
+  margin: 10px;
+  padding: 10px;
+  border: 1px dashed var(--red);
+}
+
+.thing {
+  border: 1px solid var(--blue);
+  height: 20px;
+  margin: 10px;
+}
+
+.status {
+  border: 1px solid var(--green);
+  margin: 10px;
+}
+
+.example-1,
+.example-3,
+.internal-element,
+.external-element {
+  overflow: auto;
+  max-height: 200px;
+}
