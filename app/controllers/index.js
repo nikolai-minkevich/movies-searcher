@@ -34,9 +34,6 @@ export default class DataController extends Controller {
   handleLoadMore() {
     return new Promise((resolve) => {
       later(async () => {
-        if (this.query !== '') {
-          console.log('query ', this.query);
-        }
         this.page++;
         const rawData = await this.loadData();
         this.data = [...this.data, ...rawData.results];

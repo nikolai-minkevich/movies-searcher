@@ -28,9 +28,6 @@ export default class MovieDetailedComponent extends Component {
 
   get adult() {
     const { adult } = this.args.movie;
-    if (adult) {
-      console.log('ok');
-    }
     return adult;
   }
 
@@ -48,7 +45,6 @@ export default class MovieDetailedComponent extends Component {
   }
   get creditsCrew() {
     const { crew } = this.args.movie;
-    console.log();
     return crew.slice(0, 5);
   }
 }
