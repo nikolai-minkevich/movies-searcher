@@ -1,10 +1,6 @@
 import Component from '@glimmer/component';
 const THEMOVIEDB_IMG = 'https://image.tmdb.org/t/p/w500';
 export default class MovieDetailedComponent extends Component {
-  get nothing() {
-    console.log(this.args.movie);
-    return null;
-  }
   get year() {
     const { release_date } = this.args.movie;
     return release_date.substr(0, 4);

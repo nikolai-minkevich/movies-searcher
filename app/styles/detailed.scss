@@ -73,3 +73,38 @@
   flex-direction : column;
   padding-left   : 20px;
 }
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {
+
+  .detailed-content {
+    flex-direction: column;
+  }
+
+  .person-container {
+    flex-wrap: wrap;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .detailed-content__poster {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    width          : 100%;
+    ;
+  }
+
+  .detailed-header,
+  .detailed-content {
+    width         : auto;
+    flex-direction: column;
+  }
+
+  .person-container {
+    width         : auto;
+    flex-direction: column;
+  }
+}
