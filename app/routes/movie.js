@@ -16,7 +16,7 @@ export default class MovieRoute extends Route {
       `${TMDB_API}/movie/${params.id}/credits?api_key=${ENV.TMDB_API_KEY}&language=en-US`
     );
     let parsed_credits = await response_credits.json();
-
+    window.scrollTo(0, 0);
     return { ...parsed_credits, ...parsed_movie };
   }
 }

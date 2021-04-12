@@ -6,6 +6,9 @@
   position       : sticky;
   top            : 5px;
   z-index        : 991;
+  transform      : scale(1.05, 1.05);
+  transition     : all 0.2s;
+  width          : 95vw;
 
   Input {
     font-size    : 1.5em;
@@ -16,5 +19,14 @@
 
   Input:focus {
     outline: none;
+  }
+}
+
+@media (max-width: 630px) {
+  .search-container {
+    top       : 55px;
+    background: $navbar_background;
+    transform : scale(1.05, 1.05);
+    transition: all 0.2s;
   }
 }

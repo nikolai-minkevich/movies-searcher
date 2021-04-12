@@ -9,8 +9,6 @@ const TMDB_API = 'https://api.themoviedb.org/3';
 export default class DataController extends Controller {
   @tracked page = 1;
   @tracked data;
-  perPage = 10;
-
   @tracked query = '';
 
   @action
