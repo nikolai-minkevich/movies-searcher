@@ -9,16 +9,12 @@
         <h1>
           {{@movie.title}}
           <span class="detailed-header__year">
-            (
-            {{this.year}}
-            )
+            ({{this.year}})
           </span>
         </h1>
         {{#if @movie.tagline}}
           <h2>
-            «
-            {{@movie.tagline}}
-            »
+            «{{@movie.tagline}}»
           </h2>
         {{/if}}
       </div>
@@ -36,10 +32,9 @@
           </li>
           <li class="movie-info">
             <span class="movie-info__content">
-              {{@movie.vote_average}}
-              (
-              {{@movie.vote_count}}
-              )
+              {{@movie.vote_average}} 
+              <Rating @rating= {{@movie.vote_average}} />
+              ({{@movie.vote_count}} voters)
             </span>
           </li>
         </ul>
