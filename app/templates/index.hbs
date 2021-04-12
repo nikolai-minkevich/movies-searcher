@@ -1,9 +1,12 @@
+<div class="search-container">
+  <Input {{on 'input' this.setQuery}} />
+</div>
 <InfiniteScroller
   class="movies-list"
   @onLoadMore={{this.handleLoadMore}}
   @element={{this.document}} as |scroller|
 >
-  {{#each this.things as |movieInfo|}}
+  {{#each this.data as |movieInfo|}}
     <Movie @movie={{movieInfo}} />
   {{/each}}
   {{#unless scroller.isScrollable}}

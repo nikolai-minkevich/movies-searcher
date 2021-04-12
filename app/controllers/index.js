@@ -1,45 +1,60 @@
 import { later } from '@ember/runloop';
 import { Promise } from 'rsvp';
 import { action } from '@ember/object';
-import Controller, { inject as injectController } from '@ember/controller';
+import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import ENV from '../config/environment';
 const TMDB_API = 'https://api.themoviedb.org/3';
 
-export default class ThingsController extends Controller {
-  @injectController('application') appController;
-
+export default class DataController extends Controller {
   @tracked page = 1;
-  @tracked things;
+  @tracked data;
   perPage = 10;
+
+  @tracked query = '';
+
+  @action
+  setQuery({ target: { value } }) {
+    this.query = value;
+    this.initData();
+  }
 
   constructor() {
     super(...arguments);
-    this.things = [];
-    this.initThings();
+    this.data = [];
+    this.initData();
   }
 
-  async initThings() {
-    let data = await this.loadData();
-    this.things = [...this.things, ...data.results];
+  async initData() {
+    window.scrollTo(0, 0);
+    this.data = [];
+    const rawData = await this.loadData();
+    this.data = [...this.data, ...rawData.results];
   }
 
   @action
   handleLoadMore() {
     return new Promise((resolve) => {
       later(async () => {
+        if (this.query !== '') {
+          console.log('query ', this.query);
+        }
         this.page++;
-        const data = await this.loadData();
-        this.things = [...this.things, ...data.results];
+        const rawData = await this.loadData();
+        this.data = [...this.data, ...rawData.results];
         resolve();
-      }, this.appController.loadDelay);
+      }, this.query);
     });
   }
 
   async loadData() {
-    let response = await fetch(
-      `${TMDB_API}/movie/popular?api_key=${ENV.TMDB_API_KEY}&language=en-US&page=${this.page}`
-    );
+    let fetchQuery = `${TMDB_API}/movie/popular?api_key=${ENV.TMDB_API_KEY}&language=en-US&page=${this.page}`;
+    if (this.query) {
+      fetchQuery = `${TMDB_API}/search/movie?api_key=${
+        ENV.TMDB_API_KEY
+      }&language=en-US&page=${this.page}&query=${encodeURI(this.query)}`;
+    }
+    let response = await fetch(fetchQuery);
     let parsed = await response.json();
     return parsed;
   }
