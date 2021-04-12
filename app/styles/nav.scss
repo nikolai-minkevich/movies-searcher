@@ -1,0 +1,36 @@
+/**
+ * Nav bar
+ */
+
+nav {
+  height         : 60px;
+  padding-left   : 10vw;
+  padding-right  : 10vw;
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  background     : $navbar_background;
+  position       : sticky;
+  top            : 0;
+  z-index        : 990;
+
+  h1 {
+    color      : $navbar_logo;
+    font-size  : 20px;
+    font-weight: 800;
+    font-family: 'Lobster', cursive;
+    transition : 0.5s linear;
+  }
+
+  h1:hover {
+    color: $navbar_logo__hover;
+  }
+
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding-left : 10px;
+    padding-right: 10px;
+  }
+}

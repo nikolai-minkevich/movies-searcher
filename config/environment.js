@@ -47,5 +47,7 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV.TMDB_API_KEY = '72b56103e43843412a992a8d64bf96e9';
+
   return ENV;
 };

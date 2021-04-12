@@ -1,0 +1,6 @@
+<div class="movies-list">
+  {{!-- <p>{{this.page}} of {{this.totalPages}} ({{this.data.length}})</p> --}}
+  {{#each this.data as |movieInfo|}}
+    <Movie @movie={{movieInfo}} />
+  {{/each}}
+</div>

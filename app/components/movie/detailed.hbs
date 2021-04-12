@@ -1,0 +1,61 @@
+{{this.nothing}}
+<div class="detailed-container">
+  <div class="detailed-content">
+    <div class="detailed-content__poster">
+      <img src="{{this.poster}}" />
+    </div>
+    <div class="detailed-info">
+      <div class="detailed-header">
+        <h1>
+          {{@movie.title}}
+          <span class="detailed-header__year">
+            ({{this.year}})
+          </span>
+        </h1>
+        {{#if @movie.tagline}}
+          <h2>
+            «{{@movie.tagline}}»
+          </h2>
+        {{/if}}
+      </div>
+      <div class="movie-info-list">
+        <ul>
+          <li class="movie-info">
+            <span class="movie-info__content">
+              {{this.genres}}
+            </span>
+          </li>
+          <li class="movie-info">
+            <span class="movie-info__content">
+              {{this.date}}
+            </span>
+          </li>
+          <li class="movie-info">
+            <span class="movie-info__content">
+              {{@movie.vote_average}} 
+              <Rating @rating= {{@movie.vote_average}} />
+              ({{@movie.vote_count}} voters)
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="movie-overview">
+        <span class="movie-overview__content">
+          {{@movie.overview}}
+        </span>
+      </div>
+      <div class="credits">
+        <div class="person-container">
+          {{#each this.creditsCast as |person|}}
+            <Person @person={{person}} />
+          {{/each}}
+        </div>
+        <div class="person-container">
+          {{#each this.creditsCrew as |person|}}
+            <Person @person={{person}} />
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
