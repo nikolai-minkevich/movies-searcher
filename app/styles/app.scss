@@ -10,28 +10,20 @@
 @import 'detailed.scss';
 @import 'person.scss';
 
-:root {
-  --red: red;
-  --blue: blue;
-  --green: green;
-}
 
-/* stylelint-disable-next-line */
 a {
   display: inline-block;
 }
 
 .infinite-scroller {
-  margin: 20px;
+ 
   padding: 10px;
-  border: 1px solid var(--red);
 }
 
 .internal-element,
 .external-element {
   margin: 10px;
   padding: 10px;
-  border: 1px dashed var(--red);
 }
 
 .thing {
